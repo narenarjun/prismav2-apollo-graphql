@@ -4,5 +4,45 @@
   "description": "\"A boilerplate for nodejs express apollo prisma-v2 graphql\"",
   "main": "index.js",
   "author": "Narendran",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js --ext js --exec babel-node",
+    "generate": "prisma generate",
+    "migration-save": "prisma migrate save --experimental",
+    "migration-up": "prisma migrate up --experimental",
+    "postbuild": " prisma generate && babel src --out-dir dist --copy-files",
+    "heroku-postbuild": " prisma generate && babel src --out-dir dist --copy-files"
+  },
+  "keywords": [
+    "primsa",
+    "nodejs",
+    "apollo",
+    "grpahql-tools",
+    "prisma"
+  ],
+  "devDependencies": {
+    "@prisma/cli": "^2.9.0",
+    "nodemon": "^2.0.5"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-spread": "^7.11.0",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@graphql-tools/graphql-file-loader": "^6.2.4",
+    "@graphql-tools/load": "^6.2.4",
+    "@graphql-tools/merge": "^6.2.4",
+    "@graphql-tools/schema": "^6.2.4",
+    "@prisma/client": "^2.9.0",
+    "apollo-server": "^2.18.2",
+    "apollo-server-express": "^2.18.2",
+    "bcryptjs": "^2.4.3",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "graphql-tools": "^6.2.4",
+    "jsonwebtoken": "^8.5.1"
+  }
 }
