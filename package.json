@@ -1,0 +1,8 @@
+{
+  "name": "prisma2-apollo-graphql-boilerplate",
+  "version": "1.0.0",
+  "description": "\"A boilerplate for nodejs express apollo prisma-v2 graphql\"",
+  "main": "index.js",
+  "author": "Narendran",
+  "license": "MIT"
+}
